@@ -1,3 +1,6 @@
+body {
+  background-color: black;
+}
 #mainContainer {
   width: 100vw;
   height: 100vh;
@@ -5,9 +8,31 @@
   right: 0;
   top: 0;
   bottom: 0;
+  background-color: black;
+  margin: 0;
+  border: 0;
+  padding: 0;
 }
 
 #svgID {
   width: 100%;
   height: 100%;
+  background-color: black;
+  position: relative;
+  z-index: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+#text {
+  top: 47.5%;
+  left: 42%;
+  align-items: center;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  z-index: 100;
+  margin: 0;
+  border: 0;
+  padding: 0;
 }
