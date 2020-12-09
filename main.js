@@ -1,5 +1,6 @@
 var mainContainer = document.getElementById("mainContainer");
 var svg = document.getElementById("svgID");
+var textDiv = document.getElementById("textDiv");
 var letter0 = document.getElementById("letter0");
 var letter1 = document.getElementById("letter1");
 var letter2 = document.getElementById("letter2");
@@ -31,6 +32,23 @@ function getHeight() {
     document.documentElement.offsetHeight,
     document.documentElement.clientHeight
   );
+}
+var stopAnimation = false;
+var clickCounter = 0;
+function clickFunc() {
+  if (clickCounter % 2 == 0) {
+    stopAnimation = false;
+    lineGenerator();
+    clickCounter += 1;
+  } else {
+    // while (svg.firstChild) {
+    //   svg.removeChild(svg.firstChild);
+    // }
+    // textDiv.style.visibility = "hidden";
+    clickCounter += 1;
+    stopAnimation = true;
+    console.log("in here");
+  }
 }
 
 function lineGenerator() {
@@ -326,7 +344,9 @@ function deleteLines() {
       }
       await sleep(10);
       if (x == 0) {
-        lineGenerator();
+        if (stopAnimation == false) {
+          lineGenerator();
+        }
       }
     }
   };
